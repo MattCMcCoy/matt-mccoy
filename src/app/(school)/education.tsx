@@ -24,7 +24,10 @@ export function Education() {
                 {school.degree}
               </div>
               <div className="font-titillium text-base font-light">
-                {`${moment(school.endDate).isAfter(moment()) ? "Expected: " : ""} ${moment(school.endDate).format("MMM. YYYY")}`}
+                {`${moment(school.endDate).isAfter(moment()) ? "Expected: " : ""} ${moment(school.endDate).format("MMM YYYY")}`}
+              </div>
+              <div className="font-titillium text-base font-light">
+                {school.gpa ? `Overall GPA: ${school.gpa}` : ""}
               </div>
             </div>
           );
