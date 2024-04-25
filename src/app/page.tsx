@@ -1,15 +1,23 @@
 import { Landing } from "./(home)/landing";
-import { Experience } from "./(home)/experience";
+import { Experience } from "./(work)/experience";
+import { Project } from "./(projects)/project";
+import { Education } from "./(school)/education";
 
 export default async function Home() {
   return (
-    <main className="animated-background flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-[#15162c] via-[#15162c] to-[#140f19] font-titillium text-white">
-      <div className="flex h-[100vh] w-full flex-col items-center justify-center">
+    <div>
+      <div className="flex h-screen flex-col items-center justify-center bg-gradient-to-r from-[#15162c] via-[#15162c] to-[#140f19]">
         <Landing />
       </div>
-      <div className="flex h-[100vh] w-full flex-col bg-[#15162c] pt-40">
+      <div className="flex h-fit flex-col items-center justify-center bg-gradient-to-r from-[#15162c] via-[#15162c] to-[#140f19] pb-20">
         <Experience />
       </div>
-    </main>
+      <div className="flex h-fit flex-col items-center justify-center bg-gradient-to-r from-[#15162c] via-[#15162c] to-[#140f19] pb-20">
+        <Project />
+      </div>
+      <div className="flex h-fit flex-col items-center justify-center bg-gradient-to-r from-[#15162c] via-[#15162c] to-[#140f19] pb-20">
+        <Education />
+      </div>
+    </div>
   );
 }
