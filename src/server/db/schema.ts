@@ -141,8 +141,16 @@ const education = [
   },
 ];
 
+const landing = {
+  name: "Matt McCoy",
+  tagline: "Photography. Hiking. Kayaking. Coffee. Developer.",
+  about:
+    "I am a software engineer with a passion for photography, hiking, kayaking, and coffee. I have experience across the stack and love finding new technologies to play around with. I am a graduate of Northeastern University in Boston MA with a bachelor's degree in Computer Science.",
+};
+
 export const StaticJSONDatabase = {
   experience,
   projects,
   education,
+  landing,
 };
