@@ -6,8 +6,9 @@
 
 @layer base {
   :root {
-    background-color: #140f19;
-    scrollbar-color: white #140f19;
+    --tw-bg-opacity: 1;
+    background-color: rgb(32 32 32 / var(--tw-bg-opacity));
+    scrollbar-color: white rgb(32 32 32 / var(--tw-bg-opacity));
 
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
