@@ -7,7 +7,9 @@ export default {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
-        titillium: ["Titillium Web", ...fontFamily.sans],
+        titillium: ["var(--font-titillium)"],
+        lobster: ["var(--font-lobster)"],
+        leagueSpartan: ["var(--font-league-spartan)"],
       },
     },
     colors: {
@@ -73,5 +75,8 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@midudev/tailwind-animations"),
+    require("@codaworks/react-glow/tailwind"),
+  ],
 } satisfies Config;
