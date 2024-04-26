@@ -1,5 +1,5 @@
-import moment from "moment";
-import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import moment from 'moment';
+import { createTRPCRouter, publicProcedure } from '~/server/api/trpc';
 
 export const educationRouter = createTRPCRouter({
   getAll: publicProcedure.query(({ ctx }) => {
@@ -10,5 +10,5 @@ export const educationRouter = createTRPCRouter({
     });
 
     return education;
-  }),
+  })
 });

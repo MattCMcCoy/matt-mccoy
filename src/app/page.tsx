@@ -1,7 +1,7 @@
-import { Landing } from "./(home)/landing";
-import { Experience } from "./(work)/experience";
-import { Project } from "./(projects)/project";
-import { Education } from "./(school)/education";
+import { Landing } from './(home)/landing';
+import { Project } from './(projects)/project';
+import { Education } from './(school)/education';
+import { Experience } from './(work)/experience';
 
 export default async function Home() {
   return (

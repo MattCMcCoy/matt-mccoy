@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import moment from "moment";
-import { api } from "~/trpc/react";
+import moment from 'moment';
+import { api } from '~/trpc/react';
 
 export function Education() {
   const { data: schools } = api.education.getAll.useQuery();
   return (
     <div className="mx-10 mr-auto mt-20">
-      <div className="border-portfolio-indigo_dye-800  mb-5 w-fit border-b font-titillium text-5xl font-extrabold text-white">
+      <div className="text-white  mb-5 w-fit border-b border-portfolio-indigo_dye-800 font-titillium text-5xl font-extrabold">
         Education.
       </div>
       <div className="flex flex-row flex-wrap gap-4">
@@ -15,7 +15,7 @@ export function Education() {
           return (
             <div
               key={school.id}
-              className="flex w-full flex-col gap-2 text-white"
+              className="text-white flex w-full flex-col gap-2"
             >
               <div className="font-titillium text-3xl font-light">
                 {school.school}
@@ -24,10 +24,10 @@ export function Education() {
                 {school.degree}
               </div>
               <div className="font-titillium text-base font-light">
-                {`${moment(school.endDate).isAfter(moment()) ? "Expected: " : ""} ${moment(school.endDate).format("MMM YYYY")}`}
+                {`${moment(school.endDate).isAfter(moment()) ? 'Expected: ' : ''} ${moment(school.endDate).format('MMM YYYY')}`}
               </div>
               <div className="font-titillium text-base font-light">
-                {school.gpa ? `Overall GPA: ${school.gpa}` : ""}
+                {school.gpa ? `Overall GPA: ${school.gpa}` : ''}
               </div>
             </div>
           );

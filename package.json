@@ -9,7 +9,9 @@
     "db:studio": "drizzle-kit studio",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "lint:fix": "npm run lint --fix",
+    "start": "next start",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@codaworks/react-glow": "^1.0.6",
@@ -31,6 +33,7 @@
     "zod": "^3.23.3"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/eslint": "^8.56.2",
     "@types/node": "^20.11.20",
     "@types/react": "^18.2.57",

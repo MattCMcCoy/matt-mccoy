@@ -1,8 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import { api } from "~/trpc/react";
-import { ExperienceCard } from "./card";
+import React from 'react';
+
+import { api } from '~/trpc/react';
+
+import { ExperienceCard } from './card';
 
 export function Experience() {
   const { data: experience } = api.experience.getAll.useQuery();
@@ -17,10 +19,10 @@ export function Experience() {
           return (
             <ExperienceCard
               key={exp.id}
-              title={exp.title ?? ""}
-              startDate={exp.startDate ?? ""}
-              endDate={exp.endDate ?? ""}
-              image={exp.image ?? ""}
+              title={exp.title ?? ''}
+              startDate={exp.startDate ?? ''}
+              endDate={exp.endDate ?? ''}
+              image={exp.image ?? ''}
             />
           );
         })}

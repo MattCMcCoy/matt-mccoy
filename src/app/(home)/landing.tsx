@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { api } from "~/trpc/react";
+import { api } from '~/trpc/react';
 
 export function Landing() {
   const { data: landing, isLoading } = api.landing.get.useQuery();

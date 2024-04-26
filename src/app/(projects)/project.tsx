@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { api } from "~/trpc/react";
+import { api } from '~/trpc/react';
 
-import { ProjectCard } from "./card";
+import { ProjectCard } from './card';
 
 export function Project() {
   const { data: project } = api.project.getAll.useQuery();
