@@ -25,7 +25,7 @@ const projectsData = [
     mobile: false,
     githuburl: '',
     description:
-      'A website built for Generate Product Development at Northeastern University. The website is meant to showcase the projects that the team has worked on and the team members. The website is also meant to be a resource for potential clients to learn more about the team and the projects that the team has worked on.'
+      'A website built for Generate Product Development at Northeastern University. The site is meant to be a resource for potential clients and students to learn more about the teams and the projects that teams have worked on in the past.'
   },
   {
     id: 3,

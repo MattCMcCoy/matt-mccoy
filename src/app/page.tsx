@@ -5,7 +5,7 @@ import { Experience } from './(work)/experience';
 
 export default async function Home() {
   return (
-    <div className="bg-portfolio-jet-300 text-portfolio-white-500">
+    <div className="bg-portfolio-jet-100 text-portfolio-white-500">
       <div className="flex h-screen flex-col items-center justify-center">
         <Landing />
       </div>
