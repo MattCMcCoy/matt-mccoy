@@ -75,20 +75,22 @@ export function ProjectCard({
               width={project.mobile ? 175 : 350}
               height={project.mobile ? 175 : 200}
             />
-            <div className="absolute top-60 w-full bg-portfolio-jet-100">
-              <div className="mt-5 flex flex-row items-center">
-                <div className="font-titillium font-semibold">About</div>
-                <div className="ml-3 h-1 w-[60%] border-b border-portfolio-indigo_dye-700" />
+            {visible && (
+              <div className="absolute top-60 w-full bg-portfolio-jet-100">
+                <div className="mt-5 flex flex-row items-center">
+                  <div className="font-titillium font-semibold">About</div>
+                  <div className="ml-3 h-1 w-[60%] border-b border-portfolio-indigo_dye-700" />
+                </div>
+                <div
+                  className={clsx(
+                    'h-28 w-fit overflow-hidden text-ellipsis text-wrap font-titillium text-lg',
+                    visible && 'animate-fade-in-right animate-duration-1000'
+                  )}
+                >
+                  {project.description}
+                </div>
               </div>
-              <div
-                className={clsx(
-                  'h-28 w-fit overflow-hidden text-ellipsis text-wrap font-titillium text-lg',
-                  visible && 'animate-fade-in-right animate-duration-1000'
-                )}
-              >
-                {project.description}
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
