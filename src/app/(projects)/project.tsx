@@ -2,20 +2,27 @@
 
 import { api } from '~/trpc/react';
 
-import { ProjectCard } from './card';
+import { SectionHeader } from '../_components/section-header';
+import { Card } from './card';
 
 export function Project() {
   const { data: project } = api.project.getAll.useQuery();
 
   return (
-    <div className="mx-10 mr-auto mt-20">
-      <div className="mb-5 w-fit border-b border-portfolio-indigo_dye-700 font-titillium text-5xl font-extrabold">
-        Projects.
+    <div>
+      <div className="sticky top-0 z-20 bg-portfolio-jet-300">
+        <SectionHeader title="Projects." />
       </div>
-
-      <div className="ml-auto flex w-[90vw] flex-row flex-wrap gap-4">
-        {project?.map((project) => {
-          return <ProjectCard key={project.id} project={project} />;
+      <div className="bg-portfolio-jet-300">
+        {project?.map((proj, index) => {
+          return (
+            <div
+              key={proj.id}
+              className="sticky top-0 flex h-[100vh] items-center justify-center"
+            >
+              <Card i={index} project={proj} />
+            </div>
+          );
         })}
       </div>
     </div>

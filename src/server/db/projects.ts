@@ -11,8 +11,10 @@ const projectsData = [
     image: 'generate',
     mobile: true,
     githuburl: '',
+    header:
+      "A mobile app meant to simplify the care of loved ones with Alzheimer's and Dementia.",
     description:
-      "A mobile app meant to simplify the care of loved ones with Alzheimer's and Dementia. The app allows for Caretakers to track daily activities, medication, and appointments for loved ones easily with a centralized calendar, task management, and group management system within the application."
+      'The app allows for Caretakers to track daily activities, medication, and appointments for loved ones easily with a centralized calendar, task management, and group management system within the application.'
   },
   {
     id: 2,
@@ -24,6 +26,8 @@ const projectsData = [
     image: 'generate',
     mobile: false,
     githuburl: '',
+    header:
+      'A resource for potential clients and students of Generate Product Development to learn more about projects and the organization.',
     description:
       'A website built for Generate Product Development at Northeastern University. The site is meant to be a resource for potential clients and students to learn more about the teams and the projects that teams have worked on in the past.'
   },
@@ -37,8 +41,10 @@ const projectsData = [
     image: '',
     mobile: false,
     githuburl: '',
+    header:
+      'A site to track the availability of streaming services for movies.',
     description:
-      'A site developed to track the availability of streaming services for movies. The site allows users to search for a movie and see which streaming services it is available on. The site also allows users to see what is available on a specific streaming service. The site uses the TMDB API to get the availability of movies.'
+      'The site allows users to search for a movie and see which streaming services it is available on. The site also allows users to see what is available on a specific streaming service. The site uses the TMDB API to get the availability of movies.'
   },
   {
     id: 4,
@@ -50,6 +56,7 @@ const projectsData = [
     image: '',
     mobile: false,
     githuburl: '',
+    header: 'My very first portfolio.',
     description:
       'Developed during my very first Co-op. The site allowed me to showcase my work and experience while I learned more about web development.'
   },
@@ -63,6 +70,7 @@ const projectsData = [
     mobile: false,
     image: '',
     githuburl: '',
+    header: 'A refresh of my original portfolio.',
     description:
       'The site you are on right now and a refresh of my original portfolio. Meant to showcase my work and experience while utilizing more modern technologies and design.'
   },
@@ -76,8 +84,9 @@ const projectsData = [
     image: '',
     mobile: false,
     githuburl: '',
+    header: 'A game of checkers built for the Covey.Town platform.',
     description:
-      'A game of checkers built for the Covey.Town platform. The game allows players to play checkers with other players in a Covey.Town room. The game was built to learn more about adding to larger code bases, game development, and React.'
+      'The game allows players to play checkers with other players in a Covey.Town room. The game was built to learn more about adding to larger code bases, game development, and React.'
   },
   {
     id: 7,
@@ -89,26 +98,28 @@ const projectsData = [
     image: '',
     mobile: false,
     githuburl: 'https://github.com/MattCMcCoy/AgarIOGame',
+    header: 'A clone of the popular game Agar.io.',
     description:
-      'A clone of the popular game Agar.io and one of my very first projects. The game allows players to move around the screen and eat other blobs to grow in size. The game was built to learn more about game development and Object Oriented Programming.'
+      'The game allows players to move around the screen and eat other blobs to grow in size. The game was built to learn more about game development and Object Oriented Programming.'
   }
-] satisfies z.infer<typeof ProjectSchema>;
+] satisfies z.infer<typeof ProjectSchema>[];
 
-const ProjectSchema = z.array(
-  z.object({
-    id: z.number(),
-    title: z.string(),
-    position: z.string(),
-    organization: z.string(),
-    startDate: z.string(),
-    endDate: z.string(),
-    image: z.string(),
-    mobile: z.boolean(),
-    githuburl: z.string(),
-    description: z.string()
-  })
-);
+export const ProjectSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  position: z.string(),
+  organization: z.string(),
+  startDate: z.string(),
+  endDate: z.string(),
+  image: z.string(),
+  mobile: z.boolean(),
+  githuburl: z.string(),
+  header: z.string(),
+  description: z.string()
+});
 
-const { data: projects } = ProjectSchema.safeParse(projectsData);
+const ProjectSchemaArray = z.array(ProjectSchema);
+
+const { data: projects } = ProjectSchemaArray.safeParse(projectsData);
 
 export { projects };
