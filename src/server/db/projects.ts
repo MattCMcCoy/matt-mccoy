@@ -10,11 +10,10 @@ const projectsData = [
     endDate: '2024-04-20',
     image: 'generate',
     mobile: true,
-    githuburl: '',
-    header:
-      "A mobile app meant to simplify the care of loved ones with Alzheimer's and Dementia.",
+    githuburl: 'https://github.com/MattCMcCoy/care-wallet',
     description:
-      'The app allows for Caretakers to track daily activities, medication, and appointments for loved ones easily with a centralized calendar, task management, and group management system within the application.'
+      'The app allows for Caretakers to track daily activities, medication, and appointments for loved ones easily with a centralized calendar, task management, and group management system within the application.',
+    externalurl: null
   },
   {
     id: 2,
@@ -25,9 +24,8 @@ const projectsData = [
     endDate: '2023-12-20',
     image: 'generate',
     mobile: false,
-    githuburl: '',
-    header:
-      'A resource for potential clients and students of Generate Product Development to learn more about projects and the organization.',
+    githuburl: 'https://github.com/GenerateNU/website',
+    externalurl: 'https://generatenu.com/',
     description:
       'A website built for Generate Product Development at Northeastern University. The site is meant to be a resource for potential clients and students to learn more about the teams and the projects that teams have worked on in the past.'
   },
@@ -40,9 +38,8 @@ const projectsData = [
     endDate: '2024-04-20',
     image: '',
     mobile: false,
-    githuburl: '',
-    header:
-      'A site to track the availability of streaming services for movies.',
+    githuburl: 'https://github.com/MattCMcCoy/streaming-availability',
+    externalurl: 'https://streaming-availability.vercel.app/',
     description:
       'The site allows users to search for a movie and see which streaming services it is available on. The site also allows users to see what is available on a specific streaming service. The site uses the TMDB API to get the availability of movies.'
   },
@@ -55,8 +52,8 @@ const projectsData = [
     endDate: '2022-12-20',
     image: '',
     mobile: false,
-    githuburl: '',
-    header: 'My very first portfolio.',
+    githuburl: 'https://github.com/MattCMcCoy/MattCMcCoy.github.io',
+    externalurl: 'https://mattcmccoy.github.io/',
     description:
       'Developed during my very first Co-op. The site allowed me to showcase my work and experience while I learned more about web development.'
   },
@@ -69,10 +66,10 @@ const projectsData = [
     endDate: '',
     mobile: false,
     image: '',
-    githuburl: '',
-    header: 'A refresh of my original portfolio.',
+    githuburl: 'https://github.com/MattCMcCoy/matt-mccoy',
     description:
-      'The site you are on right now and a refresh of my original portfolio. Meant to showcase my work and experience while utilizing more modern technologies and design.'
+      'The site you are on right now and a refresh of my original portfolio. Meant to showcase my work and experience while utilizing more modern technologies and design.',
+    externalurl: null
   },
   {
     id: 6,
@@ -83,10 +80,10 @@ const projectsData = [
     endDate: '2023-04-24',
     image: '',
     mobile: false,
-    githuburl: '',
-    header: 'A game of checkers built for the Covey.Town platform.',
+    githuburl: 'https://github.com/MattCMcCoy/CoveyTown',
     description:
-      'The game allows players to play checkers with other players in a Covey.Town room. The game was built to learn more about adding to larger code bases, game development, and React.'
+      'The game allows players to play checkers with other players in a Covey.Town room. The game was built to learn more about adding to larger code bases, game development, and React.',
+    externalurl: null
   },
   {
     id: 7,
@@ -98,9 +95,9 @@ const projectsData = [
     image: '',
     mobile: false,
     githuburl: 'https://github.com/MattCMcCoy/AgarIOGame',
-    header: 'A clone of the popular game Agar.io.',
     description:
-      'The game allows players to move around the screen and eat other blobs to grow in size. The game was built to learn more about game development and Object Oriented Programming.'
+      'The game allows players to move around the screen and eat other blobs to grow in size. The game was built to learn more about game development and Object Oriented Programming.',
+    externalurl: null
   }
 ] satisfies z.infer<typeof ProjectSchema>[];
 
@@ -113,8 +110,8 @@ export const ProjectSchema = z.object({
   endDate: z.string(),
   image: z.string(),
   mobile: z.boolean(),
-  githuburl: z.string(),
-  header: z.string(),
+  githuburl: z.string().nullable(),
+  externalurl: z.string().nullable(),
   description: z.string()
 });
 
