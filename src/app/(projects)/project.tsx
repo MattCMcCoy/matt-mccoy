@@ -3,27 +3,33 @@
 import { api } from '~/trpc/react';
 
 import { SectionHeader } from '../_components/section-header';
-import { Card } from './card';
+import { Card, PhoneCard } from './card';
 
 export function Project() {
-  const { data: project } = api.project.getAll.useQuery();
+  const { data: featured } = api.project.getFeatured.useQuery();
+  const { data: others } = api.project.getOther.useQuery();
 
   return (
-    <div>
-      <div className="sticky top-0 z-20 bg-portfolio-jet-300">
-        <SectionHeader title="Projects." />
+    <div className="h-full w-full">
+      <div className="w-fit">
+        <SectionHeader title="Some Things I Built." />
       </div>
-      <div className="bg-portfolio-jet-300">
-        {project?.map((proj, index) => {
+      <div className="mx-auto w-fit">
+        {featured?.map((proj, index) => {
           return (
-            <div
-              key={proj.id}
-              className="sticky top-0 flex h-[100vh] items-center justify-center"
-            >
-              <Card i={index} project={proj} />
+            <div key={index}>
+              <div className="hidden lg:block">
+                <Card i={index} project={proj} />
+              </div>
+              <div className="block lg:hidden">
+                <PhoneCard project={proj} i={index} />
+              </div>
             </div>
           );
         })}
+      </div>
+      <div>
+        <SectionHeader title="Other Notable Projects." />
       </div>
     </div>
   );

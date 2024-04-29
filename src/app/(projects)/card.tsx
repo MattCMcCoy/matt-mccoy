@@ -25,57 +25,96 @@ export function Card({
   const router = useRouter();
   return (
     <div
-      className="border-xl relative flex h-[60vh] w-[80vw] origin-top flex-col rounded-2xl border-2 border-portfolio-white-900 bg-portfolio-indigo_dye-400"
-      style={{ top: `calc(-5vh + ${i * 45}px)` }}
+      className={clsx(
+        'relative my-20 flex h-fit w-[90vw] 2xl:w-[50vw]',
+        i % 2 == 0 ? 'flex-row' : 'flex-row-reverse'
+      )}
     >
-      <div className="mb-5 ml-2 mt-2 font-titillium text-3xl">
-        {project.title}
-      </div>
-      <Image
-        src={getGif(project.title).image}
-        alt=""
-        className={clsx(
-          'mx-auto rounded-2xl border-none fill-none',
-          project.mobile ? '' : 'h-[300px] w-[600px]'
-        )}
-        unoptimized
-        width={project.mobile ? 175 : 350}
-        height={project.mobile ? 175 : 200}
-      />
-      <div className="ml-2 mt-5 flex w-[98%] flex-row items-center">
-        <div className="w-fit font-sans text-xl font-extrabold">about</div>
-        <div className="ml-3 h-0 w-[90%] border-b border-portfolio-white-700" />
-        <div className="mx-auto flex flex-row justify-center">
-          {project.githuburl && (
-            <div className="w-fit">
-              <Image
-                src={Github as StaticImport}
-                width={40}
-                height={40}
-                alt=""
-                color="white"
-                className="text-portfolio-jet-900"
-                onClick={() => router.push(project.githuburl ?? '')}
-              />
-            </div>
+      <div className="h-[40vh] w-[60vw] 2xl:w-[40vw]">
+        <div
+          className={clsx(
+            'w-fit font-titillium text-portfolio-indigo_dye-600',
+            i % 2 != 0 && 'ml-auto'
           )}
-          {project.externalurl && (
-            <div className="ml-auto w-fit">
-              <Image
-                src={ExternalLink as StaticImport}
-                width={40}
-                height={40}
-                alt=""
-                color="white"
-                className="text-portfolio-jet-900"
-                onClick={() => router.push(project.externalurl ?? '')}
-              />
-            </div>
+        >
+          Featured Project
+        </div>
+        <div
+          className={clsx(
+            'w-fit font-titillium text-3xl',
+            i % 2 != 0 && 'ml-auto'
           )}
+        >
+          {project.title}
         </div>
       </div>
-      <div className="ml-2 mt-5 font-titillium text-lg font-light">
+      <div className="absolute top-20 w-[50vw] rounded-lg bg-portfolio-jet-500 p-5 font-titillium 2xl:w-[25vw]">
         {project.description}
+        <div className="flex flex-row flex-wrap gap-2">
+          {project.languages.map((lang) => (
+            <div
+              className="text-portfolio-jet-800"
+              key={`${project.title + lang}`}
+            >
+              {lang}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className={clsx('mx-auto', project.mobile && 'w-full')}>
+        <Image
+          src={getGif(project.title).image}
+          alt=""
+          className={clsx(
+            'mx-auto rounded-2xl',
+            project.mobile ? '' : 'h-[30vw] w-[100vw] xl:h-[20vw] xl:w-[60vw]'
+          )}
+          unoptimized
+          width={project.mobile ? 175 : 350}
+          height={project.mobile ? 175 : 200}
+        />
+      </div>
+    </div>
+  );
+}
+
+export function PhoneCard({
+  i,
+  project
+}: {
+  i: number;
+  project: z.infer<typeof ProjectSchema>;
+}) {
+  return (
+    <div className="relative my-20 flex h-fit w-[90vw] flex-col xl:w-[50vw]">
+      <div className="h-fit w-[60vw] xl:w-[40vw]">
+        <div className="w-fit font-titillium">Featured Project</div>
+        <div className="w-[90vw] font-titillium text-3xl">{project.title}</div>
+      </div>
+      <div>
+        <div className="absolute h-[40vw] w-[90vw] rounded-lg bg-portfolio-jet-500/60 p-5 font-titillium xl:w-[20vw]">
+          {project.description}
+          <div className="flex flex-row flex-wrap gap-2">
+            {project.languages.map((lang) => (
+              <div
+                className="font-leagueSpartan text-portfolio-white-600"
+                key={`${project.title + lang}`}
+              >
+                {lang}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={'mx-auto h-full w-full'}>
+          <Image
+            src={getGif(project.title).image}
+            alt=""
+            className={clsx('mx-auto rounded-2xl', 'h-[40vw] w-[100vw]')}
+            unoptimized
+            width={project.mobile ? 175 : 350}
+            height={project.mobile ? 175 : 200}
+          />
+        </div>
       </div>
     </div>
   );

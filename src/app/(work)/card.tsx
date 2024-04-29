@@ -40,7 +40,7 @@ export function ExperienceCard(props: ExperienceCardProps) {
     <div
       ref={elementRef}
       className={clsx(
-        'group relative flex h-[50vw] w-full items-center justify-center rounded-xl bg-cover bg-left transition-all md:h-[300px] lg:w-[49%] 2xl:w-[32%]',
+        'group relative flex h-[50vw] w-full items-center justify-center rounded-xl bg-cover bg-left transition-all md:h-[300px] lg:w-[49%] 2xl:w-[48%]',
         visible && 'animate-expand-horizontally animate-duration-700'
       )}
     >
