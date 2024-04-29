@@ -40,7 +40,7 @@ export function ExperienceCard(props: ExperienceCardProps) {
     <div
       ref={elementRef}
       className={clsx(
-        'group relative flex h-[50vw] w-full items-center justify-center rounded-xl bg-cover bg-left transition-all md:h-[300px] lg:w-[49%] 2xl:w-[48%]',
+        'group relative flex h-[50vw] w-full items-center justify-center rounded-xl bg-cover bg-left transition-all md:h-[300px]',
         visible && 'animate-expand-horizontally animate-duration-700'
       )}
     >
@@ -58,7 +58,7 @@ export function ExperienceCard(props: ExperienceCardProps) {
       )}
       <div className="bg-black absolute z-10 h-full w-full rounded-xl opacity-40 transition-all ease-in-out group-hover:opacity-80" />
       <Image
-        className="absolute z-30 h-[30%] w-[80%] transition-all ease-in-out group-hover:h-[20%] group-hover:w-[50%] group-hover:-translate-y-12 md:h-[100px]"
+        className="absolute z-30 h-[30%] w-[40%] transition-all ease-in-out group-hover:h-[20%] group-hover:w-[30%] group-hover:-translate-y-12 md:h-[100px]"
         src={image?.image ?? ''}
         alt=""
       />

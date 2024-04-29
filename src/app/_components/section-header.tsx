@@ -1,6 +1,6 @@
 export function SectionHeader({ title }: { title: string }) {
   return (
-    <div className="flex w-[90vw] flex-row items-center">
+    <div className="flex w-[90vw] flex-row items-center 2xl:w-[50vw]">
       <div className="w-fit font-titillium text-2xl font-extrabold">
         {title}
       </div>

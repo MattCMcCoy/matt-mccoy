@@ -1,6 +1,6 @@
 'use client';
 
-import { type animate, motion, stagger, useAnimate } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { api } from '~/trpc/react';
 
 import { SectionHeader } from '../_components/section-header';
@@ -8,7 +8,6 @@ import { Card, PhoneCard } from './card';
 
 export function Project() {
   const { data: featured } = api.project.getFeatured.useQuery();
-  const { data: others } = api.project.getOther.useQuery();
 
   return (
     <div className="h-full w-full">
@@ -40,8 +39,8 @@ function Button() {
   return (
     <div className="rounded-lg bg-portfolio-indigo_dye-700">
       <motion.button
-        whileHover={{ scale: 1.25, translateX: -20, translateY: -15 }}
-        className="rounded-lg border border-portfolio-indigo_dye-700 bg-portfolio-jet-400 p-2 font-leagueSpartan text-xl text-portfolio-platinum"
+        whileHover={{ scale: 1.1, translateX: -10, translateY: -5 }}
+        className="rounded-lg border border-portfolio-indigo_dye-700 bg-portfolio-jet-400 p-2 font-titillium text-lg font-thin text-portfolio-indigo_dye-700"
       >
         View All Projects
       </motion.button>

@@ -1,16 +1,14 @@
-import { type StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 import clsx from 'clsx';
+import moment from 'moment';
 import { type z } from 'zod';
 import { type ProjectSchema } from '~/server/db/projects';
 
 import AgarIO from '../assets/agario.gif';
 import CareWallet from '../assets/carewallet.gif';
 import CoveyTown from '../assets/coveytown.gif';
-import ExternalLink from '../assets/external-link.svg';
-import Github from '../assets/github.svg';
 import Portfolio from '../assets/portfolio1.gif';
 import StreamingAvailability from '../assets/streamingavailability.gif';
 import Website from '../assets/website.gif';
@@ -33,11 +31,21 @@ export function Card({
       <div className="h-[40vh] w-[60vw] 2xl:w-[40vw]">
         <div
           className={clsx(
-            'w-fit font-titillium text-portfolio-indigo_dye-600',
-            i % 2 != 0 && 'ml-auto'
+            'flex flex-row font-titillium text-portfolio-white-800',
+            i % 2 != 0 && 'ml-2 flex-row-reverse'
           )}
         >
-          Featured Project
+          <div
+            className={clsx(
+              'w-fit font-titillium text-portfolio-indigo_dye-600',
+              i % 2 != 0 && 'ml-auto'
+            )}
+          >
+            Featured Project
+          </div>
+          <div className={clsx(i % 2 == 0 && 'ml-auto mr-2')}>
+            {moment(project.endDate).format('YYYY')}
+          </div>
         </div>
         <div
           className={clsx(
