@@ -48,12 +48,19 @@ export function Card({
           {project.title}
         </div>
       </div>
-      <div className="absolute top-20 w-[50vw] rounded-lg bg-portfolio-jet-500 p-5 font-titillium 2xl:w-[25vw]">
-        {project.description}
-        <div className="flex flex-row flex-wrap gap-2">
+      <div className="absolute top-20 w-[50vw] font-titillium 2xl:w-[25vw]">
+        <div className="rounded-lg  bg-portfolio-jet-500 p-5">
+          {project.description}
+        </div>
+        <div
+          className={clsx(
+            'ml-2 mt-2 flex w-fit flex-row flex-wrap gap-2',
+            i % 2 != 0 && 'ml-auto mr-2'
+          )}
+        >
           {project.languages.map((lang) => (
             <div
-              className="text-portfolio-jet-800"
+              className="font-leagueSpartan text-portfolio-white-600"
               key={`${project.title + lang}`}
             >
               {lang}
@@ -61,6 +68,7 @@ export function Card({
           ))}
         </div>
       </div>
+
       <div className={clsx('mx-auto', project.mobile && 'w-full')}>
         <Image
           src={getGif(project.title).image}
@@ -88,22 +96,24 @@ export function PhoneCard({
   return (
     <div className="relative my-20 flex h-fit w-[90vw] flex-col xl:w-[50vw]">
       <div className="h-fit w-[60vw] xl:w-[40vw]">
-        <div className="w-fit font-titillium">Featured Project</div>
+        <div className="w-fit font-titillium text-portfolio-indigo_dye-600">
+          Featured Project
+        </div>
         <div className="w-[90vw] font-titillium text-3xl">{project.title}</div>
+        <div className="flex flex-row flex-wrap gap-2">
+          {project.languages.map((lang) => (
+            <div
+              className="font-leagueSpartan text-portfolio-white-600"
+              key={`${project.title + lang}`}
+            >
+              {lang}
+            </div>
+          ))}
+        </div>
       </div>
       <div>
         <div className="absolute h-[40vw] w-[90vw] rounded-lg bg-portfolio-jet-500/60 p-5 font-titillium xl:w-[20vw]">
           {project.description}
-          <div className="flex flex-row flex-wrap gap-2">
-            {project.languages.map((lang) => (
-              <div
-                className="font-leagueSpartan text-portfolio-white-600"
-                key={`${project.title + lang}`}
-              >
-                {lang}
-              </div>
-            ))}
-          </div>
         </div>
         <div className={'mx-auto h-full w-full'}>
           <Image
