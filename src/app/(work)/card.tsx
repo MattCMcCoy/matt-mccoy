@@ -34,7 +34,7 @@ export function ExperienceCard(props: ExperienceCardProps) {
       )}
     >
       <Image
-        className="h-full w-full rounded-xl transition-all ease-in-out"
+        className="h-full w-full rounded-xl opacity-35 transition-all ease-in-out"
         src={image?.imageBG ?? ''}
         alt=""
       />
