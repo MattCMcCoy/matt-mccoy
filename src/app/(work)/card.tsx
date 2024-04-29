@@ -26,11 +26,11 @@ export function ExperienceCard(props: ExperienceCardProps) {
   const image = getImage(props.image);
   return (
     <motion.div
-      initial={{ opacity: 0, x: props.index % 2 === 0 ? 200 : -200 }}
+      initial={{ opacity: 0, x: props.index % 2 === 0 ? 50 : -50 }}
       whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
       viewport={{ once: true }}
       className={clsx(
-        'group relative flex h-[50vw] w-full items-center justify-center rounded-xl bg-cover bg-left transition-all md:h-[300px]'
+        'group relative flex h-[50vw] w-full items-center justify-center rounded-xl md:h-[300px]'
       )}
     >
       <Image
