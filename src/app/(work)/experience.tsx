@@ -17,7 +17,7 @@ export function Experience() {
         <SectionHeader title="Experience." />
       </div>
       <div className="mt-10 flex w-[50vw] flex-row flex-wrap gap-4">
-        {experience?.map((exp) => {
+        {experience?.map((exp, index) => {
           return (
             <ExperienceCard
               key={exp.id}
@@ -25,6 +25,7 @@ export function Experience() {
               startDate={exp.startDate ?? ''}
               endDate={exp.endDate ?? ''}
               image={exp.image ?? ''}
+              index={index}
             />
           );
         })}

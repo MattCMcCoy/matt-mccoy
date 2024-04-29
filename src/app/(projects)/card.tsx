@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 import clsx from 'clsx';
 import moment from 'moment';
@@ -20,7 +19,6 @@ export function Card({
   i: number;
   project: z.infer<typeof ProjectSchema>;
 }) {
-  const router = useRouter();
   return (
     <div
       className={clsx(
@@ -95,7 +93,6 @@ export function Card({
 }
 
 export function PhoneCard({
-  i,
   project
 }: {
   i: number;

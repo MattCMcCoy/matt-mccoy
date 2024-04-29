@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-
 import Image from 'next/image';
 
 import { clsx } from 'clsx';
+import { motion } from 'framer-motion';
 import moment from 'moment';
 
 import GenerateBG from '../assets/generate-bg.jpg';
@@ -14,34 +13,24 @@ import Khoury from '../assets/khoury.png';
 import Northeastern from '../assets/northeastern.png';
 import SymboticBG from '../assets/symbotic-bg.jpeg';
 import Symbotic from '../assets/symbotic.png';
-import { useIsVisible } from '../utils/isVisible';
 
 export interface ExperienceCardProps {
   title: string;
   startDate: string;
   endDate: string;
   image: string;
+  index: number;
 }
 
 export function ExperienceCard(props: ExperienceCardProps) {
-  const elementRef = useRef<HTMLDivElement>(null);
-  const isVisible = useIsVisible(elementRef);
-
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    if (isVisible) {
-      setVisible(true);
-    }
-  }, [isVisible]);
-
   const image = getImage(props.image);
   return (
-    <div
-      ref={elementRef}
+    <motion.div
+      initial={{ opacity: 0, x: props.index % 2 === 0 ? 200 : -200 }}
+      whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+      viewport={{ once: true }}
       className={clsx(
-        'group relative flex h-[50vw] w-full items-center justify-center rounded-xl bg-cover bg-left transition-all md:h-[300px]',
-        visible && 'animate-expand-horizontally animate-duration-700'
+        'group relative flex h-[50vw] w-full items-center justify-center rounded-xl bg-cover bg-left transition-all md:h-[300px]'
       )}
     >
       <Image
@@ -70,7 +59,7 @@ export function ExperienceCard(props: ExperienceCardProps) {
           {`${moment(props.startDate).isAfter(moment()) ? 'Start Date: ' : ''} ${moment(props.startDate).format('MMM. YYYY')} ${props.endDate ? `- ${moment(props.endDate).format('MMM. YYYY')}` : props.endDate !== '' ? `- Present` : ''}`}
         </h3>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
