@@ -12,22 +12,11 @@ export function Experience() {
   const { data: experience } = api.experience.getFeatured.useQuery();
 
   return (
-    <div className="mx-10 mt-20">
-      <div className="">
-        <SectionHeader title="Places I've Worked At." />
-      </div>
-      <div className="mt-10 flex w-[50vw] flex-row flex-wrap gap-4">
-        {experience?.map((exp, index) => {
-          return (
-            <ExperienceCard
-              key={exp.id}
-              title={exp.title ?? ''}
-              startDate={exp.startDate ?? ''}
-              endDate={exp.endDate ?? ''}
-              image={exp.image ?? ''}
-              index={index}
-            />
-          );
+    <div className="mx-auto mr-auto mt-20">
+      <SectionHeader title="Where I've Worked." />
+      <div className="mt-10 flex flex-col gap-4">
+        {experience?.map((job, index) => {
+          return <ExperienceCard key={job.id} job={job} index={index} />;
         })}
       </div>
       <div className="mx-auto mt-10 w-fit">

@@ -19,18 +19,23 @@ export interface ExperienceCardProps {
   startDate: string;
   endDate: string;
   image: string;
-  index: number;
 }
 
-export function ExperienceCard(props: ExperienceCardProps) {
-  const image = getImage(props.image);
+export function ExperienceCard({
+  job,
+  index
+}: {
+  job: ExperienceCardProps;
+  index: number;
+}) {
+  const image = getImage(job.image);
   return (
     <motion.div
-      initial={{ opacity: 0, x: props.index % 2 === 0 ? 50 : -50 }}
+      initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
       whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
       viewport={{ once: true }}
       className={clsx(
-        'group relative flex h-[50vw] w-full items-center justify-center rounded-xl md:h-[300px]'
+        'group relative flex h-[50vw] items-center justify-center rounded-xl md:h-[300px]'
       )}
     >
       <Image
@@ -53,10 +58,10 @@ export function ExperienceCard(props: ExperienceCardProps) {
       />
       <div className="absolute z-30 flex flex-col items-center text-3xl opacity-0 transition-all ease-in-out group-hover:translate-y-12 group-hover:opacity-100">
         <h1 className="text-wrap text-center font-titillium font-light drop-shadow-[0px_1px_1px_rgba(0,0,0,2)]">
-          {props.title}
+          {job.title}
         </h1>
         <h3 className="mt-3 font-titillium text-base font-light drop-shadow-[0px_1px_1px_rgba(0,0,0,2)]">
-          {`${moment(props.startDate).isAfter(moment()) ? 'Start Date: ' : ''} ${moment(props.startDate).format('MMM. YYYY')} ${props.endDate ? `- ${moment(props.endDate).format('MMM. YYYY')}` : props.endDate !== '' ? `- Present` : ''}`}
+          {`${moment(job.startDate).isAfter(moment()) ? 'Start Date: ' : ''} ${moment(job.startDate).format('MMM. YYYY')} ${job.endDate ? `- ${moment(job.endDate).format('MMM. YYYY')}` : job.endDate !== '' ? `- Present` : ''}`}
         </h3>
       </div>
     </motion.div>

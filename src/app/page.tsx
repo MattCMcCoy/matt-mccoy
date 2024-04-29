@@ -15,7 +15,7 @@ export default async function Home() {
       <div className="mx-auto flex h-fit flex-col items-center justify-center pb-20">
         <Project />
       </div>
-      <div className="flex h-fit flex-col items-center justify-center  pb-20">
+      <div className="flex h-fit flex-col items-center justify-center pb-20">
         <Education />
       </div>
     </div>
