@@ -2,6 +2,7 @@ import { createCallerFactory, createTRPCRouter } from '~/server/api/trpc';
 
 import { educationRouter } from './routers/education';
 import { experienceRouter } from './routers/experience';
+import { githubRouter } from './routers/github';
 import { landingRouter } from './routers/landing';
 import { projectRouter } from './routers/project';
 
@@ -14,7 +15,8 @@ export const appRouter = createTRPCRouter({
   experience: experienceRouter,
   project: projectRouter,
   education: educationRouter,
-  landing: landingRouter
+  landing: landingRouter,
+  github: githubRouter
 });
 
 // export type definition of API

@@ -8,6 +8,7 @@ import { GoLinkExternal } from 'react-icons/go';
 import { type z } from 'zod';
 import { type ProjectSchema } from '~/server/db/projects';
 
+import { Button } from '../_components/button';
 import AgarIO from '../assets/agario.gif';
 import CareWallet from '../assets/carewallet.gif';
 import CoveyTown from '../assets/coveytown.gif';
@@ -105,6 +106,9 @@ export function Card({
               {lang}
             </div>
           ))}
+        </div>
+        <div className={clsx('mt-3 w-fit', i % 2 != 0 && 'ml-auto')}>
+          <Button title="Learn More" />
         </div>
       </div>
 

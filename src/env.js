@@ -7,6 +7,7 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
+    GITHUB_TOKEN: z.string(),
     NODE_ENV: z
       .enum(['development', 'test', 'production'])
       .default('development')
@@ -26,7 +27,8 @@ export const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
-    NODE_ENV: process.env.NODE_ENV
+    NODE_ENV: process.env.NODE_ENV,
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
