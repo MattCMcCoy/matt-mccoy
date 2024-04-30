@@ -14,7 +14,7 @@ export function Project() {
       <div className="mx-auto w-fit">
         <SectionHeader title="Some Things I've Worked On." />
       </div>
-      <div className="mx-auto w-fit">
+      <div className="mx-auto mt-20 flex h-fit w-fit flex-col gap-20">
         {featured?.map((proj, index) => {
           return (
             <div key={index}>

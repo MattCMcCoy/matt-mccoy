@@ -51,7 +51,7 @@ const projectsData = [
     image: '',
     mobile: false,
     githuburl: 'https://github.com/MattCMcCoy/streaming-availability',
-    externalurl: 'https://streaming-availability.vercel.app/',
+    externalurl: 'https://popcorn-streaming.vercel.app/',
     languages: ['React', 'Tailwind', 'NextJS', 'TanStack'],
     description:
       'The site allows users to search for a movie and see which streaming services it is available on. The site also allows users to see what is available on a specific streaming service. The site uses the TMDB API to get the availability of movies.'

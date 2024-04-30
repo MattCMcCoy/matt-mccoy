@@ -1,7 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import clsx from 'clsx';
 import moment from 'moment';
+import { FiGithub } from 'react-icons/fi';
+import { GoLinkExternal } from 'react-icons/go';
 import { type z } from 'zod';
 import { type ProjectSchema } from '~/server/db/projects';
 
@@ -22,7 +25,7 @@ export function Card({
   return (
     <div
       className={clsx(
-        'relative my-20 flex h-fit w-[90vw] 2xl:w-[50vw]',
+        'relative flex h-fit w-[90vw] 2xl:w-[50vw]',
         i % 2 == 0 ? 'flex-row' : 'flex-row-reverse'
       )}
     >
@@ -41,7 +44,12 @@ export function Card({
           >
             Featured Project
           </div>
-          <div className={clsx(i % 2 == 0 && 'ml-auto mr-2')}>
+          <div
+            className={clsx(
+              'font-montserrat font-thin text-portfolio-white-600/30',
+              i % 2 == 0 && 'ml-auto mr-2'
+            )}
+          >
             {moment(project.endDate).format('YYYY')}
           </div>
         </div>
@@ -58,12 +66,37 @@ export function Card({
         <div className="rounded-lg  bg-portfolio-jet-500 p-5">
           {project.description}
         </div>
+
         <div
           className={clsx(
-            'ml-2 mt-2 flex w-fit flex-row flex-wrap gap-2',
-            i % 2 != 0 && 'ml-auto mr-2'
+            'ml-2 mt-2 flex w-fit flex-row flex-wrap items-center gap-2',
+            i % 2 != 0 && 'ml-auto mr-2 flex-row-reverse'
           )}
         >
+          <div
+            className={clsx(
+              'flex flex-row gap-2',
+              i % 2 != 0 ? 'ml-3 flex-row-reverse' : 'mr-3'
+            )}
+          >
+            {project.externalurl && (
+              <Link href={project.externalurl} target="_blank">
+                <GoLinkExternal
+                  size={24}
+                  className="hover:cursor-pointer hover:text-portfolio-indigo_dye-600"
+                />
+              </Link>
+            )}
+            {project.githuburl && (
+              <Link href={project.githuburl} target="_blank">
+                <FiGithub
+                  size={24}
+                  className="hover:cursor-pointer hover:text-portfolio-indigo_dye-600"
+                />
+              </Link>
+            )}
+          </div>
+
           {project.languages.map((lang) => (
             <div
               className="font-leagueSpartan text-portfolio-white-600"
