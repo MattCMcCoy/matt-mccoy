@@ -9,7 +9,8 @@ export default {
         sans: ['var(--font-sans)', ...fontFamily.sans],
         titillium: ['var(--font-titillium)'],
         lobster: ['var(--font-lobster)'],
-        leagueSpartan: ['var(--font-league-spartan)']
+        leagueSpartan: ['var(--font-league-spartan)'],
+        montserrat: ['var(--font-montserrat)']
       }
     },
     colors: {

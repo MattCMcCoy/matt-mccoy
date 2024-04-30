@@ -2,6 +2,7 @@ import {
   Inter,
   League_Spartan,
   Lobster,
+  Montserrat,
   Titillium_Web
 } from 'next/font/google';
 
@@ -32,6 +33,11 @@ const leagueSpartan = League_Spartan({
   weight: '400'
 });
 
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat'
+});
+
 export const metadata = {
   title: 'Matt C. McCoy',
   description: 'Portfolio of Matthew McCoy',
@@ -46,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`font-sans ${inter.variable} ${lobster.variable} ${titillium.variable} ${leagueSpartan.variable}`}
+        className={`font-sans ${inter.variable} ${lobster.variable} ${titillium.variable} ${leagueSpartan.variable}${montserrat.variable}`}
       >
         <GlowCapture>
           <TRPCReactProvider>{children}</TRPCReactProvider>
