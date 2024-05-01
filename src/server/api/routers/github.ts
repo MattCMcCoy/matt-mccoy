@@ -6,12 +6,19 @@ const octokit = new Octokit({
 });
 
 export const githubRouter = createTRPCRouter({
-  get: publicProcedure.query(async ({}) => {
-    console.log(process.env.GITHUB_TOKEN);
+  getUser: publicProcedure.query(async ({}) => {
     const { data: repos } = await octokit.users.getByUsername({
       username: 'MattCMcCoy'
     });
 
     return repos;
+  }),
+  getCommits: publicProcedure.query(async () => {
+    const { data: commits } = await octokit.repos.listCommits({
+      owner: 'MattCMcCoy',
+      repo: 'matt-mccoy'
+    });
+
+    return commits;
   })
 });
