@@ -136,7 +136,7 @@ export function PhoneCard({
   project: z.infer<typeof ProjectSchema>;
 }) {
   return (
-    <div className="relative my-20 flex h-fit w-[90vw] flex-col xl:w-[50vw]">
+    <div className="relative flex h-fit w-[90vw] flex-col xl:w-[50vw]">
       <div className="h-fit w-[60vw] xl:w-[40vw]">
         <div className="w-fit font-titillium text-portfolio-indigo_dye-600">
           Featured Project

@@ -14,7 +14,7 @@ export function Project() {
       <div className="mx-auto w-fit">
         <SectionHeader title="Some Things I've Worked On." />
       </div>
-      <div className="mx-auto mt-20 flex h-fit w-fit flex-col gap-20">
+      <div className="mx-auto flex h-fit w-fit flex-col gap-5 lg:mt-20 lg:gap-20">
         {featured?.map((proj, index) => {
           return (
             <div key={index}>
@@ -28,7 +28,7 @@ export function Project() {
           );
         })}
       </div>
-      <div className="mx-auto w-fit">
+      <div className="mx-auto mt-10 w-fit">
         <Button title="View All Projects" />
       </div>
     </div>

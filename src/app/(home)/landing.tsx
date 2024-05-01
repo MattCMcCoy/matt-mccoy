@@ -2,10 +2,8 @@
 
 import Link from 'next/link';
 
-import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
-import { GoLinkExternal } from 'react-icons/go';
 import { api } from '~/trpc/react';
 
 export function Landing() {
@@ -25,12 +23,12 @@ export function Landing() {
         />
       </div>
       <div className="absolute z-20">
-        <div className="flex flex-row">
+        <div className="flex flex-col md:flex-row">
           <div>
-            <div className="mb-1 w-[45vw] items-center font-montserrat text-2xl font-extrabold tracking-[1vw]">
+            <div className="mb-1 w-[80vw] items-center font-montserrat text-2xl font-extrabold tracking-[1vw] md:w-[45vw]">
               {landing?.name}
             </div>
-            <div className="mb-10 w-[45vw] items-center font-montserrat text-base font-light tracking-[0.4vw]">
+            <div className="mb-10 w-[80vw] items-center font-montserrat text-base font-light tracking-[0.4vw] md:w-[45vw]">
               {landing?.currentTitle}
             </div>
             <div className="flex flex-col gap-2">
@@ -54,8 +52,8 @@ export function Landing() {
               </AnimatePresence>
             </div>
           </div>
-          <div>
-            <div className="w-[35vw] font-montserrat text-base font-bold tracking-[0.2vw]">
+          <div className="mt-10 md:mt-0">
+            <div className="w-[80vw] font-montserrat text-base font-bold tracking-[0.2vw] md:w-[35vw]">
               {landing?.about}
             </div>
             <div className="mr-auto mt-5 flex w-full flex-row gap-2 border-t border-portfolio-indigo_dye-800 pt-5">
