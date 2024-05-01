@@ -59,13 +59,13 @@ export function Landing() {
               {landing?.about}
             </div>
             <div className="mr-auto mt-5 flex w-full flex-row gap-2 border-t border-portfolio-indigo_dye-800 pt-5">
-              <Link href={''} target="_blank">
+              <Link href={landing?.linkedin ?? ''} target="_blank">
                 <FiLinkedin
                   size={24}
                   className="hover:cursor-pointer hover:text-portfolio-indigo_dye-600"
                 />
               </Link>
-              <Link href={''} target="_blank">
+              <Link href={landing?.github ?? ''} target="_blank">
                 <FiGithub
                   size={24}
                   className="hover:cursor-pointer hover:text-portfolio-indigo_dye-600"

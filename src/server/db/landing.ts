@@ -3,6 +3,8 @@ import { z } from 'zod';
 const landingData = {
   name: 'Matthew McCoy',
   currentTitle: 'Software Engineer',
+  linkedin: 'https://www.linkedin.com/in/matthewcmccoy/',
+  github: 'https://github.com/MattCMcCoy',
   tagline: [
     'Photographer.',
     'Hiker.',
@@ -17,6 +19,8 @@ const landingData = {
 const LandingSchema = z.object({
   name: z.string(),
   currentTitle: z.string(),
+  linkedin: z.string(),
+  github: z.string(),
   tagline: z.array(z.string()),
   about: z.string()
 });
