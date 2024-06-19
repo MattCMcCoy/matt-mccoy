@@ -51,7 +51,9 @@ export function Card({
               i % 2 == 0 && 'ml-auto mr-2'
             )}
           >
-            {moment(project.endDate).format('YYYY')}
+            {project.endDate
+              ? moment(project.endDate).format('YYYY')
+              : 'In Progress'}
           </div>
         </div>
         <div

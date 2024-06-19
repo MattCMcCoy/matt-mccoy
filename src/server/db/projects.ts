@@ -18,7 +18,8 @@ const projectsData = [
       'TanStack',
       'Firebase',
       'AWS',
-      'PostgreSQL'
+      'PostgreSQL',
+      'GoLang'
     ],
     description:
       'The app allows for Caretakers to track daily activities, medication, and appointments for loved ones easily with a centralized calendar, task management, and group management system within the application.',
@@ -75,7 +76,7 @@ const projectsData = [
   {
     id: 5,
     title: 'Portfolio 2.0',
-    featured: false,
+    featured: true,
     position: '',
     organization: '',
     startDate: '2024-04-24',
@@ -84,9 +85,9 @@ const projectsData = [
     image: '',
     githuburl: 'https://github.com/MattCMcCoy/matt-mccoy',
     description:
-      'The site you are on right now and a refresh of my original portfolio. Meant to showcase my work and experience while utilizing more modern technologies and design.',
+      'The site you are on right now and a refresh of my original portfolio. Meant to showcase my work and experience while utilizing more modern technologies and design. It is a work in progress and I am developing it in my free time. Feel free to check out the GitHub repository and see the progress I am making.',
     externalurl: null,
-    languages: ['React', 'TypeScript']
+    languages: ['React', 'TypeScript', 'NextJS', 'Tailwind']
   },
   {
     id: 6,
