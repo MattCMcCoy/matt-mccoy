@@ -1,14 +1,14 @@
 import { z } from 'zod';
 
 const experienceData = [
-  // {
-  //   id: 1,
-  //   title: 'Software Engineer',
-  //   featured: true,
-  //   startDate: '2024-06-01',
-  //   endDate: '',
-  //   image: 'symbotic'
-  // },
+  {
+    id: 1,
+    title: 'Software Engineer',
+    featured: true,
+    startDate: '2024-06-01',
+    endDate: '',
+    image: 'symbotic'
+  },
   {
     id: 2,
     title: 'Test Automation Engineer Co-op',

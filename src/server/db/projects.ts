@@ -12,15 +12,7 @@ const projectsData = [
     image: 'generate',
     mobile: true,
     githuburl: 'https://github.com/MattCMcCoy/care-wallet',
-    languages: [
-      'React',
-      'Tailwind',
-      'TanStack',
-      'Firebase',
-      'AWS',
-      'PostgreSQL',
-      'GoLang'
-    ],
+    languages: ['ReactNative', 'Tailwind', 'TanStack', 'PostgreSQL', 'GoLang'],
     description:
       'The app allows for Caretakers to track daily activities, medication, and appointments for loved ones easily with a centralized calendar, task management, and group management system within the application.',
     externalurl: null
@@ -37,7 +29,7 @@ const projectsData = [
     mobile: false,
     githuburl: 'https://github.com/GenerateNU/website',
     externalurl: 'https://generatenu.com/',
-    languages: ['React', 'JavaScript'],
+    languages: ['ReactJS', 'JavaScript'],
     description:
       'A website built for Generate Product Development at Northeastern University. The site is meant to be a resource for potential clients and students to learn more about the teams and the projects that teams have worked on in the past.'
   },
@@ -53,7 +45,7 @@ const projectsData = [
     mobile: false,
     githuburl: 'https://github.com/MattCMcCoy/streaming-availability',
     externalurl: 'https://popcorn-streaming.vercel.app/',
-    languages: ['React', 'Tailwind', 'NextJS', 'TanStack'],
+    languages: ['ReactJS', 'TypeScript', 'Tailwind', 'NextJS', 'TanStack'],
     description:
       'The site allows users to search for a movie and see which streaming services it is available on. The site also allows users to see what is available on a specific streaming service. The site uses the TMDB API to get the availability of movies.'
   },
@@ -69,14 +61,14 @@ const projectsData = [
     mobile: false,
     githuburl: 'https://github.com/MattCMcCoy/MattCMcCoy.github.io',
     externalurl: 'https://mattcmccoy.github.io/',
-    languages: ['Tailwind', 'TypeScript', 'React'],
+    languages: ['Tailwind', 'TypeScript', 'ReactJS'],
     description:
       'Developed during my very first Co-op. The site allowed me to showcase my work and experience while I learned more about web development.'
   },
   {
     id: 5,
     title: 'Portfolio 2.0',
-    featured: true,
+    featured: false,
     position: '',
     organization: '',
     startDate: '2024-04-24',
@@ -87,7 +79,7 @@ const projectsData = [
     description:
       'The site you are on right now and a refresh of my original portfolio. Meant to showcase my work and experience while utilizing more modern technologies and design. It is a work in progress and I am developing it in my free time. Feel free to check out the GitHub repository and see the progress I am making.',
     externalurl: null,
-    languages: ['React', 'TypeScript', 'NextJS', 'Tailwind']
+    languages: ['ReactJS', 'TypeScript', 'NextJS', 'Tailwind']
   },
   {
     id: 6,
@@ -103,7 +95,7 @@ const projectsData = [
     description:
       'The game allows players to play checkers with other players in a Covey.Town room. The game was built to learn more about adding to larger code bases, game development, and React.',
     externalurl: null,
-    languages: ['React', 'TypeScript']
+    languages: ['ReactJS', 'TypeScript']
   },
   {
     id: 7,

@@ -61,7 +61,7 @@ export function ExperienceCard({
           {job.title}
         </h1>
         <h3 className="mt-3 font-titillium text-base font-light drop-shadow-[0px_1px_1px_rgba(0,0,0,2)]">
-          {`${moment(job.startDate).isAfter(moment()) ? 'Start Date: ' : ''} ${moment(job.startDate).format('MMM. YYYY')} ${job.endDate ? `- ${moment(job.endDate).format('MMM. YYYY')}` : job.endDate !== '' ? `- Present` : ''}`}
+          {`${moment(job.startDate).isAfter(moment()) ? 'Start Date: ' : ''} ${moment(job.startDate).format('MMM. YYYY')} ${job.endDate ? `- ${moment(job.endDate).format('MMM. YYYY')}` : `- Present`}`}
         </h3>
       </div>
     </motion.div>
