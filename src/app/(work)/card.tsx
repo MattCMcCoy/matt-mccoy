@@ -31,11 +31,12 @@ export function ExperienceCard({
   const image = getImage(job.image);
   return (
     <motion.div
+      key={job.title}
       initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
       whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
       viewport={{ once: true }}
       className={clsx(
-        'group relative flex h-[50vw] items-center justify-center rounded-xl md:h-[300px]'
+        'group relative flex h-[50vw] w-full items-center justify-center rounded-xl md:h-[300px]'
       )}
     >
       <Image
@@ -43,13 +44,6 @@ export function ExperienceCard({
         src={image?.imageBG ?? ''}
         alt=""
       />
-      {image?.school && (
-        <Image
-          className="absolute bottom-3 right-3 z-50 h-20 w-20 rounded-xl transition-all ease-in-out"
-          src={image?.school ?? ''}
-          alt=""
-        />
-      )}
       <div className="bg-black absolute z-10 h-full w-full rounded-xl opacity-40 transition-all ease-in-out group-hover:opacity-80" />
       <Image
         className="absolute z-30 h-[30%] w-[40%] transition-all ease-in-out group-hover:h-[20%] group-hover:w-[30%] group-hover:-translate-y-12 md:h-[100px]"

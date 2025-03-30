@@ -10,7 +10,7 @@ export function Education() {
   return (
     <div className="mx-auto mr-auto mt-20">
       <SectionHeader title="Where I've Studied." />
-      <div className="mt-10 flex flex-row flex-wrap gap-4">
+      <div className="mt-10 flex flex-col flex-wrap gap-4">
         {schools?.map((school, index) => {
           return <SchoolCard key={school.id} school={school} index={index} />;
         })}

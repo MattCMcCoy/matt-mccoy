@@ -27,8 +27,9 @@ const projectsData = [
     endDate: '2023-12-20',
     image: 'generate',
     mobile: false,
-    githuburl: 'https://github.com/GenerateNU/website',
-    externalurl: 'https://generatenu.com/',
+    githuburl:
+      'https://github.com/GenerateNU/website/commits?author=mattcmccoy',
+    externalurl: null,
     languages: ['ReactJS', 'JavaScript'],
     description:
       'A website built for Generate Product Development at Northeastern University. The site is meant to be a resource for potential clients and students to learn more about the teams and the projects that teams have worked on in the past.'

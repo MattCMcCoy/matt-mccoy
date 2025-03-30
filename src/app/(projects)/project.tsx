@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { api } from '~/trpc/react';
 
 import { Button } from '../_components/button';
@@ -29,7 +31,9 @@ export function Project() {
         })}
       </div>
       <div className="mx-auto mt-10 w-fit">
-        <Button title="View All Projects" />
+        <Link href={'/projects'}>
+          <Button title="View All Projects" />
+        </Link>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ export function Experience() {
   const { data: experience } = api.experience.getFeatured.useQuery();
 
   return (
-    <div className="mx-auto mr-auto mt-20">
+    <div className="mx-auto mr-auto mt-20 w-[90%] max-w-[1200px]">
       <SectionHeader title="Where I've Worked." />
       <div className="mt-10 flex flex-col gap-4">
         {experience?.map((job, index) => {
