@@ -113,6 +113,22 @@ const projectsData = [
       'The game allows players to move around the screen and eat other blobs to grow in size. The game was built to learn more about game development and Object Oriented Programming.',
     externalurl: null,
     languages: ['Java', 'JavaFX']
+  },
+  {
+    id: 8,
+    title: 'WaddleWallet',
+    featured: true,
+    position: '',
+    organization: '',
+    startDate: '2025-03-01',
+    endDate: '',
+    image: '',
+    mobile: false,
+    githuburl: 'https://github.com/MattCMcCoy/WaddleWallet',
+    description:
+      'An Application installable on IOS and MacOS that allows users to track their finances. Managing transactions, budgets, and accounts all in one place. The app is meant to be a personal finance tool that allows users to track their spending and saving habits.',
+    externalurl: null,
+    languages: ['Swift']
   }
 ] satisfies z.infer<typeof ProjectSchema>[];
 
