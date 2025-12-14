@@ -6,12 +6,10 @@ import 'server-only';
 import { createCaller } from '~/server/api/root';
 import { createTRPCContext } from '~/server/api/trpc';
 
-/**
- * This wraps the `createTRPCContext` helper and provides the required context for the tRPC API when
- * handling a tRPC call from a React Server Component.
- */
-const createContext = cache(() => {
-  const heads = new Headers(headers());
+const createContext = cache(async () => {
+  const incomingHeaders = await Promise.resolve(headers());
+  const heads = new Headers(incomingHeaders);
+
   heads.set('x-trpc-source', 'rsc');
 
   return createTRPCContext({
